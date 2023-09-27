@@ -20,12 +20,14 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Sony Apps
 PRODUCT_PACKAGES += \
+    MusicPro \
     MovieCreator \
     SomcColorGamut \
     SomcDualshockManager \
     SomcMediaExtensionProvider \
     ExternalMonitor \
-    UsbExtOutAudio
+    UsbExtOutAudio \
+    VideoCreator
 
 ifeq ($(TARGET_INCLUDE_SONY_MUSIC), true)
 # Sony Music
