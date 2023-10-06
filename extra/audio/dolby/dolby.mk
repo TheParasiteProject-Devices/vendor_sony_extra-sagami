@@ -45,10 +45,6 @@ PRODUCT_COPY_FILES += \
 
 # Dolby Blob(s)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DOLBY)/proprietary/system/etc/permissions/com.motorola.frameworks.core.addon.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.motorola.frameworks.core.addon.xml \
-    $(LOCAL_DOLBY)/proprietary/system/etc/permissions/moto.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto.xml \
-    $(LOCAL_DOLBY)/proprietary/system/etc/permissions/moto-checkin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto-checkin.xml \
-    $(LOCAL_DOLBY)/proprietary/system/etc/permissions/moto-settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto-settings.xml \
     $(LOCAL_DOLBY)/proprietary/vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.dolby.hardware.dms@2.0-service \
     $(LOCAL_DOLBY)/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
     $(LOCAL_DOLBY)/proprietary/vendor/lib/libdapparamstorage.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdapparamstorage.so \
@@ -90,13 +86,6 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_PACKAGES += \
     daxService \
     DolbySound
-
-# Moto Packages
-PRODUCT_PACKAGES += \
-    com.motorola.frameworks.core.addon \
-    moto \
-    moto-checkin \
-    moto-settings
 
 # Customisation
 TARGET_SHIPS_CUSTOM_DOLBY ?= true
