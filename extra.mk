@@ -24,8 +24,13 @@ endif
 PRODUCT_SOONG_NAMESPACES += \
     $(EXTRA_PATH)
 
-# Dolby Sound
-    $(call inherit-product, $(EXTRA_PATH)/extra/dolby/dolby.mk)
+# Flags
+TARGET_SUPPORTS_SOUND_ENHANCEMENT ?= true
+
+# Sound Enhancements
+ifeq ($(TARGET_SUPPORTS_SOUND_ENHANCEMENT),true)
+    $(call inherit-product, $(EXTRA_PATH)/extra/audio/dolby/dolby.mk)
+endif
 
 # Sony Framework
 PRODUCT_COPY_FILES += \

@@ -15,14 +15,14 @@
 #
 
 # Dolby Path
-LOCAL_DOLBY := $(EXTRA_PATH)/extra/dolby
+LOCAL_DOLBY := $(EXTRA_PATH)/extra/audio/dolby
 
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
-    $(EXTRA_PATH)/extra/dolby
+    $(LOCAL_DOLBY)
 
 # SEPolicy
-BOARD_VENDOR_SEPOLICY_DIRS += $(EXTRA_PATH)/extra/dolby/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(LOCAL_DOLBY)/sepolicy/vendor
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(LOCAL_DOLBY)/configs/vintf/dms/dolby_framework_matrix.xml
