@@ -94,4 +94,7 @@ PRODUCT_PACKAGES += \
     moto-checkin \
     moto-settings
 
-$(call inherit-product, $(LOCAL_DOLBY)/custom/config.mk)
+TARGET_SHIPS_CUSTOM_DOLBY ?= true
+ifeq ($(TARGET_SHIPS_CUSTOM_DOLBY),true)
+    $(call inherit-product, $(LOCAL_DOLBY)/custom/config.mk)
+endif
