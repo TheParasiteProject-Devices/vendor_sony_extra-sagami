@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-TARGET_INCLUDE_SONY_APPS ?= true
-ifeq ($(TARGET_INCLUDE_SONY_APPS), true)
-
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
    $(EXTRA_PATH)/extra/apps
@@ -32,10 +29,8 @@ PRODUCT_PACKAGES += \
     UsbExtOutAudio \
     VideoCreator
 
-ifeq ($(TARGET_INCLUDE_SONY_MUSIC), true)
+ifeq ($(TARGET_SHIPS_SONY_MUSIC), true)
 # Sony Music
 PRODUCT_PACKAGES += \
     SemcMusic
-endif
-
 endif

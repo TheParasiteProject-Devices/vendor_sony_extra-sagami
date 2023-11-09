@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-TARGET_INCLUDE_SONY_CAMERA ?= true
-ifeq ($(TARGET_INCLUDE_SONY_CAMERA), true)
-
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
     $(EXTRA_PATH)/extra/camera
@@ -32,5 +29,3 @@ PRODUCT_PACKAGES += \
     CameraPanorama \
     CreativeEffect \
     PortraitSelfie
-
-endif
