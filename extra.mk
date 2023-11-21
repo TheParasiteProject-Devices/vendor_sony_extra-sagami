@@ -39,23 +39,23 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(EXTRA_PATH)/extra/framework/product/,$(TARGET_COPY_OUT_PRODUCT)/)
 endif
 
-ifeq ($(TARGET_SHIPS_SONY_CAMERA), true)
 # Sony Camera
-    $(call inherit-product, $(EXTRA_PATH)/extra/camera/camera.mk)
+ifeq ($(TARGET_SHIPS_SONY_CAMERA), true)
+$(call inherit-product, $(EXTRA_PATH)/extra/camera/camera.mk)
 endif
 
 # Sony Apps
 ifeq ($(TARGET_SHIPS_SONY_APPS),true)
-    $(call inherit-product, $(EXTRA_PATH)/extra/apps/apps.mk)
+$(call inherit-product, $(EXTRA_PATH)/extra/apps/apps.mk)
 endif
 
 # Sound Enhancements
 ifeq ($(TARGET_SHIPS_SOUND_ENHANCEMENTS),true)
-    $(call inherit-product, $(EXTRA_PATH)/extra/audio/dolby/dolby.mk)
+$(call inherit-product, $(EXTRA_PATH)/extra/audio/dolby/dolby.mk)
 endif
 
 # Game Controllers
 ifeq ($(TARGET_SUPPORTS_GAME_CONTROLLERS),true)
- PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(EXTRA_PATH)/extra/keylayout/,$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/)
 endif

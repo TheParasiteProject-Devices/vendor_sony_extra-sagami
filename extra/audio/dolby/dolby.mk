@@ -22,11 +22,14 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_DOLBY)
 
 # SEPolicy
-BOARD_VENDOR_SEPOLICY_DIRS += $(LOCAL_DOLBY)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    $(LOCAL_DOLBY)/sepolicy/vendor
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(LOCAL_DOLBY)/configs/vintf/dms/dolby_framework_matrix.xml
-DEVICE_MANIFEST_FILE += $(LOCAL_DOLBY)/configs/vintf/dms/vendor.dolby.hardware.dms.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(LOCAL_DOLBY)/configs/vintf/dms/dolby_framework_matrix.xml
+DEVICE_MANIFEST_FILE += \
+    $(LOCAL_DOLBY)/configs/vintf/dms/vendor.dolby.hardware.dms.xml
 
 # Dolby DAP
 AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
@@ -80,7 +83,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.audio_fx.current=dolby
 
 # Dolby ODM Props
-PRODUCT_ODM_PROPERTIES += ro.vendor.sony.effect.dolby_atmos=true
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.sony.effect.dolby_atmos=true
 
 # Dolby Packages
 PRODUCT_PACKAGES += \
@@ -94,7 +98,8 @@ PRODUCT_PACKAGES += \
     moto-checkin \
     moto-settings
 
+# Customisation
 TARGET_SHIPS_CUSTOM_DOLBY ?= true
 ifeq ($(TARGET_SHIPS_CUSTOM_DOLBY),true)
-    $(call inherit-product, $(LOCAL_DOLBY)/custom/config.mk)
+$(call inherit-product, $(LOCAL_DOLBY)/custom/config.mk)
 endif

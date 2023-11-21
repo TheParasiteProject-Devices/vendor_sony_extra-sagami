@@ -29,8 +29,8 @@ PRODUCT_PACKAGES += \
     UsbExtOutAudio \
     VideoCreator
 
-ifeq ($(TARGET_SHIPS_SONY_MUSIC), true)
 # Sony Music
+ifeq ($(TARGET_SHIPS_SONY_MUSIC), true)
 PRODUCT_PACKAGES += \
     SemcMusic
 endif
