@@ -49,11 +49,6 @@ ifeq ($(TARGET_SHIPS_SONY_APPS),true)
 $(call inherit-product, $(EXTRA_PATH)/extra/apps/apps.mk)
 endif
 
-# Sound Enhancements
-ifeq ($(TARGET_SHIPS_SOUND_ENHANCEMENTS),true)
-$(call inherit-product, $(EXTRA_PATH)/extra/audio/dolby/dolby.mk)
-endif
-
 # Game Controllers
 ifeq ($(TARGET_SUPPORTS_GAME_CONTROLLERS),true)
 PRODUCT_COPY_FILES += \
